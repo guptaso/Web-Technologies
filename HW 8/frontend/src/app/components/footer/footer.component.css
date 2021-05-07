@@ -1,0 +1,13 @@
+.doc {
+  background-color: #03061c;
+}
+
+#text {
+  color: white;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  height: 40px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}

@@ -1,0 +1,35 @@
+
+<div id="body">
+  <div class="container">
+    <h2 id="empty" [style.display]="noItems ? 'block' : 'none'"> No items found in Watchlist. </h2>
+    <h2 [style.display]="watchItems ? 'block' : 'none'" class="mw watchList">My Watchlist</h2>
+    <div *ngIf="posts">
+    <ng-container  *ngFor = "let batch of posts">
+      <div class="container row watchList justify-content-left align-self-left" *ngIf="!mobile">
+        <div class="col col-md-2 col-xs-1 justify-content-left align-self-left" *ngFor="let post of batch">
+          <div class="card bg-transparent">
+            <div class="card-body">
+              <div class="wrap">
+                <img class="card-img-top image" src={{post.poster_path}} (click)="route($event, post.id, post.media_type)">
+                <h3 class="carousel-caption" id="caption">{{post.caption}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container row mk justify-content-center align-self-center" *ngIf="mobile">
+        <div *ngFor="let post of batch">
+          <div class="card bg-transparent">
+            <div class="card-body">
+              <div class="wrap">
+                <img class="card-img-top image" src={{post.poster_path}} (click)="route($event, post.id, post.media_type)">
+                <h3 class="carousel-caption" id="caption">{{post.caption}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    </div>
+  </div>
+</div>

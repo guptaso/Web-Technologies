@@ -1,0 +1,35 @@
+.container {
+  max-width: 100%;
+  margin: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 0px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+#currentCarousel {
+  padding-right: 208px;
+  padding-left: 208px;
+}
+
+.row{
+  width:100%;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+#homepageBody {
+  background-color: #050a30;
+}
+
+@media (max-width: 480px) {
+  #currentCarousel {
+    padding: 0px;
+  }
+}

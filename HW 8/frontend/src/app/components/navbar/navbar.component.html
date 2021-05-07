@@ -1,0 +1,58 @@
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="navbar">
+
+    <!-- Brand = USC Films -->
+    <a class="navbar-brand" id="navBarTitle" routerLink="/">USC Films</a>
+
+    <!-- for the collapse on mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false"  aria-label="Toggle navigation"  >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a id="navbarLink" class="nav-link" routerLink="/">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/mylist">My List</a>
+        </li>
+
+        <ng-template #rt let-r="result" let-t="term"  style="background-color: #050a30">
+          <div >
+            <a location.href="r['url']">
+
+              <img [src]="'https://image.tmdb.org/t/p/w500' + r['backdrop_path']" class="mr-1" id="tImg">
+              <ngb-highlight [result]="r.name" [term]="t" ></ngb-highlight>
+            </a>
+          </div>
+        </ng-template>
+
+        <li class="nav-item" id="searchContainer" *ngIf="!mobile">
+        <input (selectItem)=selectNt($event.item) placement="bottom-right" placeholder="Search" id="nt" type="text" (focus)="focus$.next($any($event).target.value)" class="form-control mx-sm-3 bg-transparent myTypeahead" [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" [resultTemplate]="rt"/>
+
+        </li>
+        <li class="nav-item" *ngIf="mobile">
+        <input (selectItem)=selectNt($event.item) placement="bottom-right" placeholder="Search" id="nt" type="text" (focus)="focus$.next($any($event).target.value)" class="form-control mx-sm-3 bg-transparent myTypeahead" [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" [resultTemplate]="rt"/>
+
+        </li>
+        <!--
+        <li id="searchContainer">
+          <ng-template #rt let-r="result" let-t="term"  style="background-color: #050a30">
+            <div >
+              <a location.href="r['url']">
+
+                <img [src]="'https://image.tmdb.org/t/p/w500' + r['backdrop_path']" class="mr-1" id="tImg">
+                <ngb-highlight [result]="r.name" [term]="t" ></ngb-highlight>
+              </a>
+            </div>
+          </ng-template>
+          <input (selectItem)=selectNt($event.item) placement="bottom-right" placeholder="Search" id="nt" type="text" (focus)="focus$.next($any($event).target.value)" class="form-control mx-sm-3 bg-transparent myTypeahead" [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" [resultTemplate]="rt"/>
+
+        </li>-->
+      </ul>
+    </div>
+
+</nav>

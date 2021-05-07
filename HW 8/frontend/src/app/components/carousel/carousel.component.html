@@ -1,0 +1,18 @@
+<ngb-carousel class="myCarousel pauseOnHover pauseOnFocus" *ngIf="posts" [interval]="5000" id="mainCarousel">
+  <ng-container *ngFor = "let post of posts">
+    <ng-template ngbSlide>
+      <div class="card bg-transparent">
+        <div class="card-body">
+          <div class="wrap">
+            <div class="picsum-img-wrapper">
+              <img class="image mx-auto d-block img-fluid" src = {{post.backdrop_path}} (click)="route($event, post)">
+            </div>
+            <div class="carousel-caption">
+              <h3 id="caption">{{post.title}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</ngb-carousel>

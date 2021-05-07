@@ -1,0 +1,288 @@
+
+.container {
+  max-width: 100%;
+  margin: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 0px;
+}
+
+.card-body {
+  padding: 0px;
+}
+.castCardBody {
+  width: 175px;
+}
+
+#body {
+  background-color: #050a30;
+  color: white;
+  padding-top: 70px;
+  height: 100%;
+}
+
+.textCol{
+  padding: 0;
+  top:10px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 54px;
+  padding-right: 40px;
+}
+
+h4 {
+  font-weight: normal;
+  font-style: italic;
+  padding-bottom: 30px;
+}
+
+h6 {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container-fluid{
+  padding-left: 130px;
+  padding-right: 100px;
+  padding-top: 30px;
+}
+
+.addRmBtn {
+  padding: 3px;
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-top: 20px
+}
+
+.image {
+  width: 175px;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.noHover{
+    pointer-events: none;
+}
+
+::-webkit-scrollbar{
+     width: 1px;
+     height: 8px;
+ }
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(40,43,75)
+}
+ ::-webkit-scrollbar-thumb:horizontal{
+     background: darkgrey;
+     outline: 1px solid slategrey;
+     border-radius: 10px;
+ }
+.castCardBody:hover {
+  cursor: pointer;
+}
+/*
+.image:hover {
+  cursor: pointer;
+  width: 190px;
+}
+*/
+.bioC {
+  padding-left: 30px;
+  padding-right: 34px;
+  font-size: 15px;
+}
+
+.btn-group {
+  position: relative;
+}
+
+.cIcon{
+  padding-top: 30px;
+}
+
+.carousel-caption {
+    left: 0%;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 60px;
+    margin-bottom: -20px;
+    display: none;
+    transition: all 0.4s ease;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-right: 10px;
+}
+/*
+.wrap:hover .carousel-caption{
+  display: block;
+}
+
+.wrap:hover #castName {
+  width: 190px;
+  transition: all 0.4s ease;
+}
+*/
+.casts {
+  overflow-x: auto;
+  white-space: wrap;
+  padding-left: 0px;
+}
+
+.youtubePlayer {
+  width: 500px;
+}
+
+.myAlert {
+  width: 350px;
+  margin-top: 10px;
+}
+
+#glB {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#gl {
+  font-size: 19px;
+  margin: 0px;
+}
+
+#dsTitle {
+  padding-top: 25px;
+  font-size: 22px;
+}
+
+#desc {
+  font-weight: 100;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+#shareRow {
+  padding-bottom: 35px;
+}
+
+#castName {
+  background-color: white;
+  color:black;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.name {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+
+.as {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.role {
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+
+
+.reviewCard {
+  color: black;
+  border-radius: 10px;
+}
+.card-title {
+  font-size: 22px;
+
+
+}
+#reviewCardImage {
+  width: 90px;
+}
+
+.rating {
+  height: 24px;
+  margin-left: 20px;
+  font-size: 14px;
+  background-color: black;
+  padding-right: 12px;
+  color: white;
+  padding-left: 12px;
+  border-radius: 20px;
+}
+
+.timeReview {
+  color: gray;
+  padding-bottom: 20px;
+}
+
+.card-text {
+  font-size: 17px;
+  padding-right:115px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewBtn {
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  padding-top: 30px;
+}
+
+:host ::ng-deep .carousel-control-next-icon {
+  position: absolute;
+  right: -203px;
+}
+
+.card-group {
+  margin-bottom: 20px;
+}
+
+#info {
+  margin: 0px;
+}
+
+@media (max-width: 480px){
+  .container-fluid{
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 30px;
+  }
+  ::-webkit-scrollbar{
+       width: 0px;
+       height: 0px;
+   }
+
+   #title {
+     text-align: center;
+    font-size: 30px;
+    padding-right: 0px;
+    padding-left: 40px;
+   }
+
+   :host ::ng-deep .carousel-control-next {
+     position: absolute;
+     left: 120px;
+     top: -5px;
+   }
+}

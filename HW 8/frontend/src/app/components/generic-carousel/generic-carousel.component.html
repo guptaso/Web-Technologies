@@ -1,0 +1,41 @@
+<div *ngIf="title" >
+  <h1 class="titleContainer" id="title">{{title}}</h1>
+</div>
+
+<div *ngIf="!mobile">
+  <ngb-carousel *ngIf="images" [interval]="5000">
+  <ng-container *ngFor = "let post of images">
+    <ng-template ngbSlide>
+      <div class="container row justify-content-left align-self-left">
+        <div class="col col-md-2 col-xs-1 justify-content-left align-self-left" style="" *ngFor="let p of post">
+          <div class="card bg-transparent">
+            <div class="card-body">
+              <div class="wrap">
+                <img class="card-img-top image" src = {{p[0]}} (click)="route($event, p[2], p[3])">
+                <h3 class="carousel-caption" id="caption">{{p[1]}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+  </ngb-carousel>
+</div>
+
+<div *ngIf="mobile"  >
+  <ngb-carousel [showNavigationIndicators]="false" *ngIf="posts" [interval]="5000">
+      <ng-template ngbSlide *ngFor = "let post of posts">
+        <div class="container row justify-content-center align-self-center" style="" >
+          <div class="card bg-transparent">
+            <div class="card-body">
+              <div class="wrap" >
+                <img class="card-img-top image" src={{post[0]}} (click)="route($event, post[2], post[3])">
+                <h3 class="carousel-caption" id="caption"> {{post[1]}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+</div>

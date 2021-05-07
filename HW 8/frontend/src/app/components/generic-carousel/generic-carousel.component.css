@@ -1,0 +1,121 @@
+*:focus {
+    outline: 0 !important;
+}
+
+.container {
+  margin-left: 180px;
+  padding: 0px;
+}
+
+.card {
+  width: 175px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.image:hover {
+  cursor: pointer;
+  width: 190px;
+}
+
+.image {
+  width: 175px;
+  transition: all 0.4s ease;
+}
+
+.carousel-caption {
+    left: 0%;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 1);
+    width: 175px;
+    height: 60px;
+    margin-bottom: -20px;
+    display: none;
+    transition: all 0.4s ease;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-right: 10px;
+}
+
+
+
+.wrap:hover .carousel-caption{
+  display: block;
+  width: 190px;
+}
+
+#title {
+  color: white;
+  padding-left: 105px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+
+
+.col {
+  margin: 0px;
+  padding: 0px;
+}
+
+.row {
+  margin-left: 130px;
+  margin-right: 130px;
+}
+
+:host ::ng-deep .carousel-indicators {
+  bottom: -50px;
+}
+
+:host ::ng-deep .carousel-control-prev {
+  width: 20px;
+  margin-left: 100px;
+}
+
+:host ::ng-deep .carousel-control-next {
+  width: 20px;
+  margin-right: 190px;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    width: 200px;
+  }
+  #title {
+    padding-left: 68px;
+    text-align: left;
+  }
+  h1.titleContainer {
+    text-align: center;
+  }
+  .row {
+    margin: 0px;
+  }
+  .container {
+    margin: 0px;
+  }
+  .carousel-caption {
+    display: block;
+    text-align: left;
+    top: 210px;
+    width: 178px;
+    background-color: (0, 0, 0, 1);
+  }
+
+  :host ::ng-deep .carousel-control-prev {
+    position: absolute;
+    left: -60px;
+  }
+
+  :host ::ng-deep .carousel-control-next {
+    position: absolute;
+    left: 350px;
+  }
+
+
+}

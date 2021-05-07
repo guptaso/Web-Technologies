@@ -1,0 +1,98 @@
+#empty {
+  padding-top: 80px;
+  text-align: center;
+}
+.container {
+  max-width: 100%;
+  margin: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 0px;
+}
+
+#body {
+  background-color: #050a30;
+  color: white;
+  padding-top: 70px;
+  height: 100%;
+}
+
+.card {
+  width: 175px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.watchList {
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-bottom: 70px;
+}
+
+.image:hover {
+  cursor: pointer;
+  width: 190px;
+}
+
+.image {
+  width: 175px;
+  transition: all 0.4s ease;
+}
+
+.carousel-caption {
+  left: 0%;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 175px;
+  height: 60px;
+  margin-bottom: -20px;
+  display: none;
+  transition: all 0.4s ease;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-right: 10px;
+}
+.wrap:hover .carousel-caption{
+  display: block;
+  width: 190px;
+}
+@media (max-width: 480px){
+  .mw {
+    padding: 0px;
+    text-align: left;
+    padding-left: 90px;
+  }
+  .myCol {
+    margin-right: 180px;
+    margin-top: 40px;
+  }
+  .image {
+    width: 235px;
+  }
+  .mk {
+    padding-left: 90px;
+    padding-right: 130px;
+  }
+  .carousel-caption {
+    display: block;
+    width: 235px;
+  }
+  .card {
+    margin-top: 40px;
+  }
+  .wrap:hover .carousel-caption{
+    display: block;
+    width: 235px;
+  }
+  .wrap:hover .image{
+    display: block;
+    width: 235px;
+  }
+}

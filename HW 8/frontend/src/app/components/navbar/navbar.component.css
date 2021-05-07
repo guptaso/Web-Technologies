@@ -1,0 +1,49 @@
+#searchContainer {
+  position: absolute;
+  padding-right: 160px;
+  right: 0px;
+}
+
+:host ::ng-deep .dropdown-menu {
+  background-color: #050a30;
+  border-color: white;
+}
+:host ::ng-deep .dropdown-item {
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#tImg {
+  width: 80px;
+}
+
+.myTypeahead {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0px;
+  border-width: 2px;
+}
+
+.myTypeahead:focus {
+  box-shadow: none;
+  border-color: white;
+  color: white;
+}
+
+
+#navbar {
+  background-color: #010c20;
+}
+
+#navBarTitle {
+  padding-left: 30px;
+  padding-right: 13px;
+}
+
+#navbarLink {
+padding-right: 20px;
+}

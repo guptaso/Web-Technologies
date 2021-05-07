@@ -1,0 +1,31 @@
+<div id="homepageBody">
+  <div class="container">
+    <div class="row">
+      <div class="col" id="currentCarousel">
+        <app-carousel></app-carousel>
+      </div>
+    </div>
+    <div id="continueW"  class="row">
+      <app-generic-carousel style="width: 100%" [title]="'Continue Watching'" [dataReceived]="current" ></app-generic-carousel>
+    </div>
+    <div class="row">
+      <app-generic-carousel style="width: 100%" [type]="'movie'" [title]="'Popular Movies'" [dataReceived]="popularMovies"></app-generic-carousel>
+    </div>
+    <div class="row">
+      <app-generic-carousel style="width: 100%" [type]="'movie'" [title]="'Top Rated Movies'" [dataReceived]="topRatedMovies"></app-generic-carousel>
+    </div>
+    <div class="row">
+      <app-generic-carousel style="width: 100%" [type]="'movie'" [title]="'Trending Movies'" [dataReceived]="trendingMovies"></app-generic-carousel>
+    </div>
+    <div class="row">
+      <app-generic-carousel style="width: 100%" [type]="'tv'" [title]="'Popular TV Shows'" [dataReceived]="popularTV"></app-generic-carousel>
+    </div>
+    <div class="row">
+      <app-generic-carousel style="width: 100%" [type]="'tv'" [title]="'Top Rated TV Shows'" [dataReceived]="topRatedTV"></app-generic-carousel>
+    </div>
+    <div class="row">
+      <app-generic-carousel style="width: 100%" [type]="'tv'" [title]="'Trending TV Shows'" [dataReceived]="trendingTV"></app-generic-carousel>
+    </div>
+
+  </div>
+</div>

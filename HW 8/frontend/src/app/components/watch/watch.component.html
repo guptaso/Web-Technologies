@@ -1,0 +1,249 @@
+<div class="body" id="body" *ngIf="post">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8" *ngIf="!mobile">
+        <youtube-player  [videoId]="video_id" suggestedQuality="highres" [height]="440" [startSeconds]="4" [endSeconds]="8" [width]="800"> </youtube-player>
+      </div>
+      <div class="col-8" *ngIf="mobile">
+        <youtube-player  [videoId]="video_id" suggestedQuality="highres" [height]="150" [startSeconds]="4" [endSeconds]="8" [width]="300"> </youtube-player>
+      </div>
+      <div class="col textCol" >
+        <h1>{{post.title}}</h1>
+        <h4>{{post.tagline}}</h4>
+        <h6>{{post.release_date}}  |  <i class="fas fa-star"></i> {{post.vote_average}} | {{post.runtime}} </h6>
+        <p id="gl"> <b id="glB"> Genres : </b> {{post.genres}} </p>
+        <p id="gl"> <b id="glB"> Spoken Languages :</b> {{post.spoken_languages}} </p>
+        <button class="btn btn-primary addRmBtn" role="button" [style.display]="aBtnisVisible ? 'block' : 'none'" data-dismiss="alert" (click)="addToWatchList($event, post)">Add to Watchlist</button>
+        <button class="btn btn-primary addRmBtn" role="button" [style.display]="rBtnisVisible ? 'block' : 'none'" data-dismiss="alert" (click)="removeWatchList($event, post)">Remove from Watchlist</button>
+
+        <div *ngIf="showSuccessAlert" class="alert alert-success alert-dismissible fade show myAlert" id="aBtn" role="alert">
+          Added to watchlist.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div *ngIf="showRemoveAlert" class="alert alert-danger alert-dismissible fade show myAlert" id="aBtn" role="alert">
+          Removed from watchlist.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <h2 id="dsTitle"> Description</h2>
+    </div>
+    <div class="row" id="desc">
+      {{post.overview}}
+    </div>
+    <div class="row">
+      <h2 id="dsTitle"> Share</h2>
+    </div>
+
+    <div class="row" id="shareRow">
+      <span style="color: #2ca6df;">
+
+        <a class="twitter-share-button" [href]="tweetContent" target="_blank" style="padding-right:10px;">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+      </span>
+        <a target="_blank" [href]="facebookContent" class="fb-xfbml-parse-ignore">
+          <span style="color: #0000ff;">
+            <i class="fab fa-facebook-square fa-2x"></i>
+          </span>
+        </a>
+
+    </div>
+
+    <div class="row">
+      <h2>Full Cast and Crew</h2>
+    </div>
+
+    <div class="casts container-fluid" *ngIf="casts">
+      <div >
+        <div class="row flex-nowrap">
+          <div class="col" *ngFor="let cast of casts">
+            <div class="card bg-transparent">
+              <div class="card-body castCardBody">
+                <div class="wrap">
+                  <img class="card-img-top image castCard" src = {{cast.profile_path}} (click)="openModel($event, cast, cast.profile_path)" data-toggle="modal" data-target="#exampleModal">
+                  <div id="castName">
+                    <h3 class="name">{{cast.name}}</h3>
+                    <h3 class="as">AS</h3>
+                    <h3 class="role">{{cast.character}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <h2 style="padding-top:20px;display:inline" > Reviews <h2 style="display:inline; color:#6b757d; padding-left: 10px"> {{rCount}} </h2> </h2>
+    </div>
+    <div *ngIf="!mobile">
+    <div *ngIf="reviews">
+    <div class="card-group" *ngFor="let review of reviews">
+    <div class="card reviewCard " style="width: 100%;padding-top: 25px; padding-bottom: 25px;" >
+      <div class="card-body conatiner row " >
+        <div class="col-2 d-flex justify-content-center align-self-start">
+          <img id="reviewCardImage" class="align-self-start" src={{review.author_details.avatar_path}} alt="Card image cap" style="border-radius: 50%;">
+        </div>
+        <div class="col">
+          <div class="row" style="padding-bottom: 30px;">
+            <h5 class="card-title">A review created by {{review.author}}</h5>
+            <div class="rating" >
+              <i class="fas fa-star" ></i>
+              {{review.author_details.rating}}
+            </div>
+          </div>
+          <div class="row timeReview">
+            Written by {{review.author}} on {{review.created_at | date: 'longDate'}}, {{review.created_at | date: 'mediumTime'}}
+          </div>
+          <div class="row">
+            <p class="card-text">{{review.content}}</p>
+          </div>
+          <div class="row">
+            <a href={{review.url}} target="_blank" class="reviewBtn">Read the rest</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div *ngIf="mobile">
+    <div *ngIf="reviews">
+    <div class="card-group" *ngFor="let review of reviews">
+    <div class="card reviewCard " style="width: 100%;padding-top: 25px; padding-bottom: 25px;" >
+      <div class="card-body conatiner row " >
+
+          <img id="reviewCardImage" class="align-self-start" src={{review.author_details.avatar_path}} alt="Card image cap" style="border-radius: 50%;margin-left: 120px;">
+
+
+
+            <h5 class="card-title" style="margin-left: 30px; text-align: left; margin-top: 10px;margin-right:30px;">A review created by {{review.author}}</h5>
+            <div class="rating" style="margin-left: 29px;">
+              <i class="fas fa-star" ></i>
+              {{review.author_details.rating}}
+            </div>
+
+          <div class="row timeReview" style="padding-bottom: 20px;margin-right: 10px;margin-left: 25px;margin-top: 20px;">
+            Written by {{review.author}} on {{review.created_at | date: 'longDate'}}, {{review.created_at | date: 'mediumTime'}}
+          </div>
+          <div class="row">
+            <p class="card-text" style="margin-left: 40px;padding-right: 0px;margin-right: 40px;">{{review.content}}</p>
+          </div>
+          <div class="row" style="    margin-left: 25px;">
+            <a href={{review.url}} target="_blank" class="reviewBtn">Read the rest</a>
+          </div>
+
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="row" style="position: relative; right: 90px;" *ngIf="!mobile">
+      <app-generic-carousel style="width: 100%" [type]="type" [title]="rTitle" [dataReceived]="recommended"></app-generic-carousel>
+    </div>
+    <div class="row" style="position: relative; right: 30px;" *ngIf="mobile">
+      <app-generic-carousel style="width: 100%" [type]="type" [title]="rTitle" [dataReceived]="recommended"></app-generic-carousel>
+    </div>
+    <div class="row" style="position: relative; right: 90px;" *ngIf="!mobile">
+      <app-generic-carousel style="width: 100%" [type]="type" [title]="sTitle" [dataReceived]="similar"></app-generic-carousel>
+    </div>
+    <div class="row" style="position: relative; right: 30px;" *ngIf="mobile">
+      <app-generic-carousel style="width: 100%" [type]="type" [title]="sTitle" [dataReceived]="similar"></app-generic-carousel>
+    </div>
+  </div>
+
+
+</div>
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+    <style>
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px #2f324b;
+      background: white;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #aaaaaa;
+      border-radius: 10px;
+    }
+
+
+    </style>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{singleCast.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container row">
+          <div class="col-3 d-flex">
+            <img id="singleCastImg" class="image noHover" style="border-radius: 0px;" src={{singleCast.profile_path}}>
+          </div>
+          <div class="col" style="padding-right:0px;">
+            <p id="info"> Birth: {{singleCast.birthday}}</p>
+            <p id="info"> Birth Place: {{singleCast.place_of_birth}}</p>
+            <p id="info"> Gender: {{singleCast.gender}}</p>
+            <p id="info" [style.display]="site ? 'block' : 'none'"> Website: <a href={{singleCast.homepage}}>{{singleCast.homepage}}</a></p>
+            <p id="info"> Known for: {{singleCast.known_for_department}}</p>
+            <p id="info" style="padding-bottom: 30px;"> Also Known As: {{singleCast.also_known_as}}</p>
+            <div class="btn-toolbar" role="toolbar">
+              <div class="btn-group mr-2" role="group" aria-label="First group">
+                <!--button [style.display]="imbd ? 'block' : 'none'" type="button"  (click)="handles.imbd" class="btn btn-secondary bg-transparent btn-outline-light" style="border: none;width: 40px;" ngbPopover="Visit IMBD" triggers="mouseenter:mouseleave" -->
+                <a href={{handles.imbd}} target="_blank" [style.display]="imbd ? 'block' : 'none'" type="button" ngbPopover="Visit IMBD" style="padding-right: 10px;" triggers="mouseenter:mouseleave">
+                  <span style="color: #e2b62b;" class="cIcon" >
+                    <i class="fab fa-imdb fa-2x  "  ></i>
+                  </span>
+                </a>
+                <a href={{handles.instagram}} target="_blank"  [style.display]="insta ? 'block' : 'none'"  style="padding-right: 10px;"  triggers="mouseenter:mouseleave"  ngbPopover="Visit Instagram">
+                  <span style="color: #820482;" class="cIcon">
+                    <i class="fab fa-instagram fa-2x" ></i>
+                  </span>
+                </a>
+                <a href={{handles.facebook}} target="_blank" [style.display]="facebook ? 'block' : 'none'" style="padding-right: 10px;"  triggers="mouseenter:mouseleave"  ngbPopover="Visit Facebook">
+                  <span style="color: #0000ff;" class="cIcon">
+                    <i class="fab fa-facebook-square fa-2x" ></i>
+                  </span>
+                </a>
+                <a href={{handles.twitter}} target="_blank" [style.display]="twitter ? 'block' : 'none'" style="padding-right: 10px;"  triggers="mouseenter:mouseleave"  ngbPopover="Visit Twitter">
+                  <span style="color: #2ca6df;" class="cIcon">
+                    <i class="fab fa-twitter fa-2x " ></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+
+        </div>
+        <div class="row d-flex bioC" style="padding-top: 15px;">
+          <h5 id="CastBio" style="font-size: 26px;">Biography</h5>
+        </div>
+        <div class="row d-flex bioC" >
+          {{singleCast.biography}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
