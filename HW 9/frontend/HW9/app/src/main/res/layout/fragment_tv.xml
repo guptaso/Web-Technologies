@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:id="@+id/mainContent"/>
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/slider"
+            android:layout_width="360dp"
+            android:layout_height="425dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:sliderAnimationDuration="600"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="2dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="1dp"
+            app:sliderIndicatorSelectedColor="@color/customBlue"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="3"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/slider"
+            android:text="Top-Rated"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:id="@+id/topRatedTitle"
+            android:paddingBottom="0dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:scrollbars="none"
+            android:layout_below="@+id/topRatedTitle"
+            android:paddingTop="0dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/topRatedSlider">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/topRated"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"/>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/topRatedSlider"
+            android:text="Popular"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:id="@+id/popularTitle"
+            android:paddingBottom="0dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:scrollbars="none"
+            android:layout_below="@+id/popularTitle"
+            android:paddingTop="0dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/popularSlider">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/popular"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"/>
+        </HorizontalScrollView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/popularSlider"
+            android:text="Powered by TMDB"
+            android:textColor="@color/customBlue"
+            android:textAlignment="center"
+            android:id="@+id/footerP1"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/footerP1"
+            android:textColor="@color/customBlue"
+            android:textAlignment="center"
+            android:text="Developed by Sonica"
+            />
+
+
+    </RelativeLayout>
+
+</ScrollView>

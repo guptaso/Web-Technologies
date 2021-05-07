@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="newJS.js"> </script>
+
+
+</head>
+
+<body class="body" id="body">
+  <div id="heading">
+    <div id="header">
+      <h1> THE MOVIE DB </h1>
+    </div>
+  </div>
+
+  <div id="page">
+    <div id="sideBar">
+      <div class="tabBtnContainer">
+        <button class="tabButton" onclick="openTab(event, 'homeTab')" id="homeTabButton"> Home &emsp;&emsp;
+          <span> <big> <big> &#10230;</big></big> </span>
+        </button>
+      </div>
+      <div class="tabBtnContainer">
+        <button class="tabButton" onclick="openTab(event, 'searchTab')">Search &emsp;&emsp;
+          <span> <big> <big>&#10230;</big></big> </span>
+        </button>
+      </div>
+    </div>
+
+    <hr class="verticalLine" />
+
+    <div id="tabContent">
+
+      <div class="tabPage" id="homeTab">
+        <div class="slideTitle" id="tm"> Trending Movies </div>
+          <div class="trendingSlidesContainer">
+            <script language="javascript"> getHomeTrendingMovies(); </script>
+            <div id="trendingSlides"> </div>
+            <div id="trendingSlidesCaptionContainer"> </div>
+          </div>
+
+          <div class="slideTitle"> TV Shows On-Air Today </div>
+          <div class="airingSlidesContainer">
+            <script language="javascript"> getHomeAiringMovies(); </script>
+            <div id="airingSlides" > </div>
+            <div id="airingSlidesCaptionContainer"> </div>
+          </div>
+      </div>
+
+  <div class="tabPage" id="searchTab">
+    <div id="searchTabContent">
+
+
+      <!--div id="popup" class="popup"-->
+
+      <div id="popup" class="full-screen hidden flex-container-center">
+        <div class="popupContainer">
+          <button id="popupClose" onclick="closePopup()">&times;</button>
+          <div id="popupHeading">
+            <img id="popupPoster">
+
+          </div>
+
+          <div id="popupText">
+            <div id="popupTitleContainer">
+              <div id="popupTitle"> </div>
+              <button id="infoBtn" onclick="window.open("https://www.themoviedb.org/movie/284052")"> i </button>
+            </div>
+            <div id="popupAbout"></div>
+            <div id="popupVotingContainer">
+              <div id="star2">&#9733;</div>
+              <div id="popupVText">
+                <div id="popupVoting"></div>
+                <div id="popupVotingCount"></div>
+              </div>
+            </div>
+            <div id="popupOverview"></div>
+            <div id="popupSpokenL"></div>
+          </div>
+          <div id="popupCastText">Cast</div>
+          <div id="popupCast"></div>
+          <div id="popupReviewsText">Reviews</div>
+          <div id="popupReviews"></div>
+          </div>
+        </div>
+
+
+      <h3 class="slideTitle" id="searchSlideTitle" > Search </h3>
+      <div id="form">
+        <div class="formRow" id="keywordFormRow">
+          <label for="keyword">Keyword<span class="required">*</span></label>
+          <input type="text" id="keyword" name="keyword"><br>
+        </div>
+        <div class="formRow">
+          <label for="category">Category<span class="required">*</span></label>
+          <select id="category" name="category">
+          <option class="val" value="0"></option>
+          <option class="val" value="1">Movies</option>
+          <option class="val" value="2">TV Shows</option>
+          <option class="val" value="3">Movies and TV Shows</option>
+          </select>
+        </div>
+        <div class="formRow" id="formRowBtn">
+          <button class="formBtn" onclick="searchInput()">Search</button>
+          <button class="formBtn" onclick="clearInput()">Clear</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="resultsContainer"> </div>
+
+    </div>
+  </div>
+  </div>
+
+
+  <div class="myfooter">
+    <div class="fc">
+      <div id="footerContent1", class="c">
+        <div class="stuff"> Designed and developed by Akansha, Pranav, & Yash</div>
+      </div>
+      <div id="footerContent2", class="c">
+        <div class="stuff"> Powered by TMDB</div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+
+
+
+<script src="index.js"></script>
