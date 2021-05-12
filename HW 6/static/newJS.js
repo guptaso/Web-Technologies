@@ -1,6 +1,6 @@
 var xhr = new XMLHttpRequest();
 //var homeLink = "http://127.0.0.1:5000/";
-var homeLink = "https://myyyapp.azurewebsites.net/"
+var homeLink = "https://hw6azureapp.azurewebsites.net/"
 async function getHomeTrendingMovies(){
   var link = homeLink + "home_trendingMovies";
   const response = await fetch(link, {
